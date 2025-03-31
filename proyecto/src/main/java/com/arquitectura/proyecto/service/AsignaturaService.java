@@ -1,7 +1,7 @@
-package com.arquitectura.arquitectura.service;
+package com.arquitectura.proyecto.service;
 
-import com.arquitectura.arquitectura.model.Asignatura;
-import com.arquitectura.arquitectura.repository.AsignaturaRepository;
+import com.arquitectura.proyecto.model.Asignatura;
+import com.arquitectura.proyecto.repository.AsignaturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

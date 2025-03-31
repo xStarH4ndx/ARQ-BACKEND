@@ -1,6 +1,6 @@
-package com.arquitectura.arquitectura.repository;
+package com.arquitectura.proyecto.repository;
 
-import com.arquitectura.arquitectura.model.Asignatura;
+import com.arquitectura.proyecto.model.Asignatura;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
