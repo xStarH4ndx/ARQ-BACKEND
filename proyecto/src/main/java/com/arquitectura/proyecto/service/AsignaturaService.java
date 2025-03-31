@@ -14,6 +14,8 @@ public class AsignaturaService {
     private AsignaturaRepository asignaturaRepository;
 
     public List<Asignatura> obtenerTodasAsignaturas() {
-        return asignaturaRepository.findAll();
+        List<Asignatura> asignaturas = asignaturaRepository.findAll();
+        System.out.println("Asignaturas----------------------------: " + asignaturas);
+        return asignaturas;
     }
 }
