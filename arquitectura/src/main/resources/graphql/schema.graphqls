@@ -1,0 +1,9 @@
+type Query {
+    obtenerTodasAsignaturas: [Asignatura]
+}
+
+type Asignatura {
+    id: ID!
+    nombre: String!
+    codigo: String!
+}
