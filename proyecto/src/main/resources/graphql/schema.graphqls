@@ -1,9 +1,92 @@
 type Query {
-    obtenerTodasAsignaturas: [Asignatura]
+  solicitudesPorFecha: [Solicitud!]!
+  solicitudesPorAsignatura: [Solicitud!]!
+  stockInsumosDisponibles: [Insumo!]!
+  obtenerTodasAsignaturas: [Asignatura]!
+}
+
+type Mutation {
+  confirmarSolicitud(idSolicitud: ID!): Solicitud!
+  modificarSolicitud(idSolicitud: ID!, input: SolicitudInput!): Solicitud!
+  eliminarSolicitud(idSolicitud: ID!): Boolean!
+    crearSolicitud(input: CrearSolicitudInput!): Solicitud!
+
+}
+
+type Solicitud {
+  id: ID!
+  fechaSolicitud: String
+  fechaUso: String
+  horario: String
+  cantGrupos: Int
+  estadoTarea: Boolean
+  estadoAlerta: String
+  profesor: Profesor
+  asignatura: Asignatura
+  laboratorio: Laboratorio
+  insumos: [SolicitudInsumo!]
+}
+
+type Profesor {
+  id: ID!
+  nombre: String!
+  apellido: String!
+  email: String!
+}
+
+type PersonalABS {
+  id: ID!
+  nombre: String!
+  apellido: String!
+  email: String!
 }
 
 type Asignatura {
-    id: ID!
-    nombre: String!
-    codigo: String!
+  id: ID!
+  nombre: String!
+  codigo: String!
 }
+
+type Laboratorio {
+  id: ID!
+  nombre: String!
+  codigo: String!
+}
+
+type Insumo {
+  id: ID!
+  nombre: String
+  tipo: String
+  unidadMedida: String
+  stockDisponible: Int
+}
+
+type SolicitudInsumo {
+  id: ID!
+  insumo: Insumo!
+  cantidad: Float!
+}
+
+input SolicitudInput {
+  fechaUso: String
+  horario: String
+  cantGrupos: Int
+  estadoAlerta: String
+}
+
+input CrearSolicitudInput {
+  idProfesor: ID!
+  idAsignatura: ID!
+  idLaboratorio: ID!
+  idPersonal: ID!
+  fechaUso: String!
+  horario: String!
+  cantGrupos: Int!
+  insumos: [InsumoCantidadInput!]!
+}
+
+input InsumoCantidadInput {
+  idInsumo: ID!
+  cantidad: Float!
+}
+
