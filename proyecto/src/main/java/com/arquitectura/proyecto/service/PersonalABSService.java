@@ -58,8 +58,7 @@ public class PersonalABSService {
             }
 
             solicitud.setCantGrupos(input.getCantGrupos());
-            solicitud.setEstadoTarea(false);
-            solicitud.setEstadoAlerta("normal");
+            solicitud.setEstado(false);
 
             // Guardar la solicitud
             Solicitud solicitudGuardada = solicitudRepository.save(solicitud);
@@ -97,7 +96,7 @@ public class PersonalABSService {
         Solicitud solicitud = solicitudRepository.findById(idSolicitud)
                 .orElseThrow(() -> new RuntimeException("Solicitud no encontrada"));
 
-        solicitud.setEstadoTarea(true);
+        solicitud.setEstado(true);
         return solicitudRepository.save(solicitud);
     }
 
@@ -109,7 +108,7 @@ public class PersonalABSService {
         solicitud.setFechaUso(datosActualizados.getFechaUso());
         solicitud.setHorario(datosActualizados.getHorario());
         solicitud.setCantGrupos(datosActualizados.getCantGrupos());
-        solicitud.setEstadoAlerta(datosActualizados.getEstadoAlerta());
+        solicitud.setEstado(datosActualizados.getEstado());
 
         return solicitudRepository.save(solicitud); // 👈 este objeto ya tiene un ID
     }
@@ -131,7 +130,7 @@ public class PersonalABSService {
         Solicitud solicitud = solicitudRepository.findById(idSolicitud)
                 .orElseThrow(() -> new RuntimeException("Solicitud no encontrada"));
 
-        solicitud.setEstadoTarea(true);
+        solicitud.setEstado(true);
         solicitudRepository.save(solicitud);
 
         // Restar insumos del stock

@@ -11,5 +11,5 @@ public class SolicitudInput {
     private String fechaUso;
     private String horario;
     private Integer cantGrupos;
-    private String estadoAlerta;
+    private Boolean estado;
 }

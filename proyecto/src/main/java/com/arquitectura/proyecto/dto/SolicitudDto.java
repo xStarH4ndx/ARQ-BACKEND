@@ -11,8 +11,7 @@ public class SolicitudDto {
     private String fechaUso;
     private String horario;
     private Integer cantGrupos;
-    private Boolean estadoTarea;
-    private String estadoAlerta;
+    private Boolean estado;
 
     private ProfesorDto profesor;
     private AsignaturaDto asignatura;

@@ -35,8 +35,7 @@ public class Solicitud {
     private LocalDate fechaUso;
     private LocalTime horario;
     private Integer cantGrupos;
-    private Boolean estadoTarea;
-    private String estadoAlerta;
+    private Boolean estado;
 
     @OneToMany(mappedBy = "solicitud")
     private List<SolicitudInsumo> insumos;

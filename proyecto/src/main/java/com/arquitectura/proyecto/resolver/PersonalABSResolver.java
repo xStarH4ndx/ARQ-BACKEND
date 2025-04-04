@@ -36,7 +36,7 @@ public class PersonalABSResolver {
         datosActualizados.setFechaUso(LocalDate.parse(input.getFechaUso()));
         datosActualizados.setHorario(LocalTime.parse(input.getHorario()));
         datosActualizados.setCantGrupos(input.getCantGrupos());
-        datosActualizados.setEstadoAlerta(input.getEstadoAlerta());
+        datosActualizados.setEstado(input.getEstado());
 
         return personalABSService.modificarSolicitud(idSolicitud, datosActualizados); // ✅ este sí tiene id
     }
